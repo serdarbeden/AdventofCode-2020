@@ -26,9 +26,12 @@ CLASS ZCL_SB_AOC_2020_D1 IMPLEMENTATION.
         DATA(lv_sum) = ls_input + ls_input_tmp.
         IF lv_sum = '2020'.
           DATA(lv_part1) = ls_input * ls_input_tmp.
-          RETURN.
+          EXIT.
         ENDIF.
       ENDLOOP.
+      IF lv_sum = '2020'.
+        EXIT.
+      ENDIF.
     ENDLOOP.
 
     "Part2
@@ -43,11 +46,11 @@ CLASS ZCL_SB_AOC_2020_D1 IMPLEMENTATION.
           lv_sum = ls_input + ls_input_tmp + ls_input_tmp2.
           IF lv_sum = '2020'.
             DATA(lv_part2) = ls_input * ls_input_tmp * ls_input_tmp2.
+            rv_output = |{ 'Part 1:' } { lv_part1 } { 'Part 2:' } { lv_part2 } |.
             RETURN.
           ENDIF.
         ENDLOOP.
       ENDLOOP.
     ENDLOOP.
-
   ENDMETHOD.
 ENDCLASS.
