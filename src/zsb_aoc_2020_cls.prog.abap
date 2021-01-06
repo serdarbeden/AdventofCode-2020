@@ -8,7 +8,7 @@ CLASS lcl_main DEFINITION.
     METHODS:
       at_sel_screen_out,
       at_sel_screen_on IMPORTING VALUE(iv_par) TYPE string,
-      start RETURNING VALUE(rv_output) TYPE char40.
+      start RETURNING VALUE(rv_output) TYPE string.
   PRIVATE SECTION.
 
 ENDCLASS.
